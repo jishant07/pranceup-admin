@@ -6,7 +6,7 @@ import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 /* Angular Material Components */
 import { MaterialModule } from './material.module';
@@ -18,6 +18,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardContentComponent } from './dashboard/dashboard-content/dashboard-content.component';
+import { CountryComponent } from './country/country.component';
+import { CountryListComponent } from './country/country-list/country-list.component';
+import { FileUploadComponent } from './features/file-upload/file-upload.component';
 
 
 @NgModule({
@@ -26,6 +29,9 @@ import { DashboardContentComponent } from './dashboard/dashboard-content/dashboa
     LoginComponent,
     DashboardComponent,
     DashboardContentComponent,
+    CountryComponent,
+    CountryListComponent,
+    FileUploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,7 @@ import { DashboardContentComponent } from './dashboard/dashboard-content/dashboa
     AngularFireModule.initializeApp(environment.firebaseConfig),
     HttpClientModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, FormsModule,
     MaterialModule
   ],
   providers: [AuthGuard,{
