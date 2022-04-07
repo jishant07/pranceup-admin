@@ -12,6 +12,7 @@ import { LoaderService } from '../_services/loader/loader.service';
   //encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
+  hide_password = true;
 
   loginForm = new FormGroup({
     email: new FormControl('',[Validators.required]),
