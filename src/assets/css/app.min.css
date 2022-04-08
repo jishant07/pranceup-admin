@@ -16212,5 +16212,9 @@ span.flatpickr-weekday {
     padding-top: 80px !important;
 }
 
+.input-full-width {
+    width: 100%;
+}
+
 
 /*# sourceMappingURL=app.min.css.map */

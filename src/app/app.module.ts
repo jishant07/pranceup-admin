@@ -21,6 +21,14 @@ import { DashboardContentComponent } from './dashboard/dashboard-content/dashboa
 import { CountryComponent } from './country/country.component';
 import { CountryListComponent } from './country/country-list/country-list.component';
 import { FileUploadComponent } from './features/file-upload/file-upload.component';
+import { UserComponent } from './user/user.component';
+import { OrdersComponent } from './order/orders.component';
+import { QuotationComponent } from './quotation/quotation.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { UpdateOrderComponent } from './order/update-order/update-order.component';
+import { OngoingOrdersComponent } from './order/ongoing-orders/ongoing-orders.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { PieceComponent } from './features/piece/piece.component';
 
 
 @NgModule({
@@ -32,6 +40,14 @@ import { FileUploadComponent } from './features/file-upload/file-upload.componen
     CountryComponent,
     CountryListComponent,
     FileUploadComponent,
+    UserComponent,
+    OrdersComponent,
+    QuotationComponent,
+    UserListComponent,
+    UpdateOrderComponent,
+    OngoingOrdersComponent,
+    InvoiceComponent,
+    PieceComponent,
   ],
   imports: [
     BrowserModule,
