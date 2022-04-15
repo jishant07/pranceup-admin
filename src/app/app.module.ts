@@ -29,6 +29,8 @@ import { UpdateOrderComponent } from './order/update-order/update-order.componen
 import { OngoingOrdersComponent } from './order/ongoing-orders/ongoing-orders.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { PieceComponent } from './features/piece/piece.component';
+import { OrderDetailsComponent } from './order/order-details/order-details.component';
+import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.component';
 
 
 @NgModule({
@@ -48,6 +50,8 @@ import { PieceComponent } from './features/piece/piece.component';
     OngoingOrdersComponent,
     InvoiceComponent,
     PieceComponent,
+    OrderDetailsComponent,
+    InvoiceListComponent,
   ],
   imports: [
     BrowserModule,

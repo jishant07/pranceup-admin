@@ -4,13 +4,13 @@ import { PieceComponent } from 'src/app/features/piece/piece.component';
 import { GlobalService } from 'src/app/_services/global.service';
 import { TypeaheadService } from 'src/app/_services/typeahead.service';
 
-@Component({
-  selector: 'app-update-order',
-  templateUrl: './update-order.component.html',
-  styleUrls: ['./update-order.component.css']
-})
-export class UpdateOrderComponent implements OnInit {
 
+@Component({
+  selector: 'app-order-details',
+  templateUrl: './order-details.component.html',
+  styleUrls: ['./order-details.component.css']
+})
+export class OrderDetailsComponent implements OnInit {
    /* Properties */
    isActivityTypeSelected:boolean = false;
    isTransportModeSelected:boolean = false;

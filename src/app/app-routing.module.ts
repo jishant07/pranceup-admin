@@ -13,6 +13,8 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UpdateOrderComponent } from './order/update-order/update-order.component';
 import { OngoingOrdersComponent } from './order/ongoing-orders/ongoing-orders.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { OrderDetailsComponent } from './order/order-details/order-details.component';
+import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.component';
 
 const routes: Routes = [
    //Admin dashbaord
@@ -34,6 +36,8 @@ const routes: Routes = [
     {path:'', component: OngoingOrdersComponent}]},
   { path:"update-order/:id", component: DashboardComponent, canActivate:[AuthGuard], children:[
     {path:"", component:UpdateOrderComponent}]},
+  { path:"order-details/:id", component: DashboardComponent, canActivate:[AuthGuard], children:[
+      {path:"", component:OrderDetailsComponent}]},
 
   { path:"onhold-quotation",component:DashboardComponent,canActivate:[AuthGuard] , children:[
     {path:'', component: QuotationComponent}]},
@@ -43,8 +47,10 @@ const routes: Routes = [
   { path:"user/:id",component:DashboardComponent,canActivate:[AuthGuard] , children:[
     {path:'', component: UserComponent}]},
 
-  { path:"invoice",component:DashboardComponent,canActivate:[AuthGuard] , children:[
+  { path:"invoice/:id",component:DashboardComponent,canActivate:[AuthGuard] , children:[
     {path:'', component: InvoiceComponent}]},
+  { path:"invoice-list",component:DashboardComponent,canActivate:[AuthGuard] , children:[
+      {path:'', component: InvoiceListComponent}]},
 ];
 
 @NgModule({

@@ -5,12 +5,12 @@
         <div class="row p-t-80">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Update Order</h4>
+                    <h4 class="mb-sm-0">Order Details</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Update Order</li>
+                            <li class="breadcrumb-item active">Order Details</li>
                         </ol>
                     </div>
 
@@ -136,14 +136,13 @@
                                             <h4>Cargo Details</h4>
                                             <div>
                                                 <app-piece *ngFor="let pieceItem of pieceArray.controls" [pieceForm]="pieceItem"></app-piece>
-                                                <button (click)="addNewPackageType()" class="btn btn-bg-dark"><i class="ri-add-fill align-middle me-1"></i></button>
+                                                <!-- <button (click)="addNewPackageType()" class="btn btn-bg-dark"><i class="ri-add-fill align-middle me-1"></i></button> -->
                                             </div>
                                             <!--end cargo details-->
                                             <br/>
                                             <div class="col-12">
                                                 <div class="hstack gap-2 justify-content-end">
-                                                    <button class="btn btn-warning" routerLink="/orders">Cancel</button>
-                                                    <button type="button" class="btn btn-bg-dark">Update Order</button>
+                                                    <button type="button" class="btn btn-bg-dark" routerLink="/invoice/1">Generate Invoice</button>
                                                 </div>
                                             </div>
                                         </form>
