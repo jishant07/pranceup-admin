@@ -31,6 +31,10 @@ import { OrderDetailsComponent } from './order/order-details/order-details.compo
 import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.component';
 import { OngoingOrdersComponent } from './order/ongoing-orders/ongoing-orders.component';
 import { OnholdQuotationComponent } from './quotation/onhold-quotation/onhold-quotation.component';
+import { AddPortComponent } from './port/add-port/add-port.component';
+import { PortListComponent } from './port/port-list/port-list.component';
+import { AddAirportComponent } from './airport/add-airport/add-airport.component';
+import { AirportListComponent } from './airport/airport-list/airport-list.component';
 
 
 @NgModule({
@@ -51,7 +55,11 @@ import { OnholdQuotationComponent } from './quotation/onhold-quotation/onhold-qu
     PieceComponent,
     OrderDetailsComponent,
     InvoiceListComponent,
-    OnholdQuotationComponent
+    OnholdQuotationComponent,
+    AddPortComponent,
+    PortListComponent,
+    AddAirportComponent,
+    AirportListComponent
   ],
   imports: [
     BrowserModule,

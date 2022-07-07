@@ -1,0 +1,75 @@
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row p-t-80">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Add Port</h4>
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Add Port</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+        <!-- strat card -->
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <div class="live-preview">
+                                        <form class="g-3 needs-validation" novalidate [formGroup]="formGroup">
+                                            <div class="row">
+                                                <mat-form-field class="col col-md-3">
+                                                    <mat-label>Port Name</mat-label>
+                                                    <input matInput type="text" formControlName="portName">
+                                                </mat-form-field>
+                                                <mat-form-field class="col col-md-3">
+                                                    <mat-label>State</mat-label>
+                                                    <input matInput type="text" formControlName="state">
+                                                </mat-form-field>
+                                                <mat-form-field class="col col-md-3">
+                                                    <mat-label>Country</mat-label>
+                                                    <input matInput type="text" formControlName="country">
+                                                </mat-form-field>
+                                                <mat-checkbox class="col col-md-3 inline-checkbox" color="primary" formControlName="isActive">Is Active</mat-checkbox>
+                                            </div>
+                                            <br/>
+                                            <div class="row">
+                                                <div class="hstack gap-2 justify-content-end">
+                                                    <button type="button" class="btn btn-warning" routerLink="/port-list">Cancel</button>
+                                                    <button class="btn btn-primary" (click)="fnAddPort()">Add Port</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!--end .live-preview"-->
+                                </div>
+                                <!--end .card-body-->
+                            </div>
+                            <!--end .card-->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                </div>
+                <!-- .card-body -->
+            </div>
+            <!-- .card-->
+        </div>
+        <!-- .col-->
+        <!-- end card-->
+    </div>
+    <!-- end container-fluid -->
+</div>
+<!-- end page-content -->
+<script src="assets/js/pages/form-validation.init.js"></script>

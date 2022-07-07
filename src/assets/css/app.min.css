@@ -16303,5 +16303,9 @@ span.flatpickr-weekday {
     font-size: 10px;
 }
 
+.inline-checkbox {
+    margin-top: 10px !important;
+}
+
 
 /*# sourceMappingURL=app.min.css.map */

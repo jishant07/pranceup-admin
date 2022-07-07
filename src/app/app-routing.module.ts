@@ -15,6 +15,10 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { OrderDetailsComponent } from './order/order-details/order-details.component';
 import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.component';
 import { OnholdQuotationComponent } from './quotation/onhold-quotation/onhold-quotation.component';
+import { PortListComponent } from './port/port-list/port-list.component';
+import { AddPortComponent } from './port/add-port/add-port.component';
+import { AirportListComponent } from './airport/airport-list/airport-list.component';
+import { AddAirportComponent } from './airport/add-airport/add-airport.component';
 
 const routes: Routes = [
    //Admin dashbaord
@@ -51,6 +55,20 @@ const routes: Routes = [
     {path:'', component: InvoiceComponent}]},
   { path:"invoice-list",component:DashboardComponent,canActivate:[AuthGuard] , children:[
       {path:'', component: InvoiceListComponent}]},
+
+  { path: "port-list", component: DashboardComponent, canActivate : [AuthGuard], children: [
+    {path: "", component: PortListComponent}
+  ]},
+  { path: "port", component: DashboardComponent, canActivate : [AuthGuard], children: [
+    {path: "", component: AddPortComponent}
+  ]},
+
+  { path: "airport-list", component: DashboardComponent, canActivate : [AuthGuard], children: [
+    {path: "", component: AirportListComponent}
+  ]},
+  { path: "airport", component: DashboardComponent, canActivate : [AuthGuard], children: [
+    {path: "", component: AddAirportComponent}
+  ]}
 ];
 
 @NgModule({
