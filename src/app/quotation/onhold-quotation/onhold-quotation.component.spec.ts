@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuotationComponent } from './quotation.component';
+import { OnholdQuotationComponent } from './onhold-quotation.component';
 
-describe('QuotationComponent', () => {
-  let component: QuotationComponent;
-  let fixture: ComponentFixture<QuotationComponent>;
+describe('OnholdQuotationComponent', () => {
+  let component: OnholdQuotationComponent;
+  let fixture: ComponentFixture<OnholdQuotationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuotationComponent ]
+      declarations: [ OnholdQuotationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QuotationComponent);
+    fixture = TestBed.createComponent(OnholdQuotationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

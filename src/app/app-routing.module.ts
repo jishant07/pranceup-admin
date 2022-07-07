@@ -7,7 +7,6 @@ import { DashboardContentComponent } from './dashboard/dashboard-content/dashboa
 import { CountryComponent } from './country/country.component';
 import { CountryListComponent } from './country/country-list/country-list.component';
 import { OrdersComponent } from './order/orders.component';
-import { QuotationComponent } from './quotation/quotation.component';
 import { UserComponent } from './user/user.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UpdateOrderComponent } from './order/update-order/update-order.component';
@@ -15,6 +14,7 @@ import { OngoingOrdersComponent } from './order/ongoing-orders/ongoing-orders.co
 import { InvoiceComponent } from './invoice/invoice.component';
 import { OrderDetailsComponent } from './order/order-details/order-details.component';
 import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.component';
+import { OnholdQuotationComponent } from './quotation/onhold-quotation/onhold-quotation.component';
 
 const routes: Routes = [
    //Admin dashbaord
@@ -40,7 +40,7 @@ const routes: Routes = [
       {path:"", component:OrderDetailsComponent}]},
 
   { path:"onhold-quotation",component:DashboardComponent,canActivate:[AuthGuard] , children:[
-    {path:'', component: QuotationComponent}]},
+    {path:'', component: OnholdQuotationComponent}]},
 
   { path:"users",component:DashboardComponent,canActivate:[AuthGuard] , children:[
     {path:'', component: UserListComponent}]},

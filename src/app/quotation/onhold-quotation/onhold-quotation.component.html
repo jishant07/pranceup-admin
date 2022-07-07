@@ -5,12 +5,12 @@
         <div class="row p-t-80">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">On-going Orders</h4>
+                    <h4 class="mb-sm-0">On-hold Quotation</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a routerLink="/dashboard">Dashboards</a></li>
-                            <li class="breadcrumb-item active">On-going Orders</li>
+                            <li class="breadcrumb-item active">On-hold Quotation</li>
                         </ol>
                     </div>
 
@@ -18,6 +18,8 @@
             </div>
         </div>
         <!-- end page title -->
+
+
         <!-- strat card -->
         <div class="col-xl-12">
             <div class="card">
@@ -35,7 +37,7 @@
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-end">
-                                <!-- <button type="button" class="btn btn-bg-dark" routerLink="/placeorder"><i class="ri-add-circle-line align-middle me-1"></i> New Order</button> -->
+                                <!-- <button type="button" class="btn btn-bg-dark" routerLink="/quotation"><i class="ri-add-circle-line align-middle me-1"></i> New Quotation</button> -->
                             </div>
                         </div>
                     </div>
@@ -67,7 +69,7 @@
                             </mat-form-field>
                             <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6"></div>
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-end">
-                                <!-- <button type="button" class="btn btn-bg-dark" routerLink="/placeorder"><i class="ri-add-circle-line align-middle me-1"></i> New Order</button> -->
+                                <!-- <button type="button" class="btn btn-bg-dark" routerLink="/quotation"><i class="ri-add-circle-line align-middle me-1"></i> New Quotation</button> -->
                             </div>
                         </div>
                     </div>
@@ -78,7 +80,6 @@
                             <ng-container matColumnDef="id">
                                 <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-muted table-light" scope="col"> Order Id </th>
                                 <td mat-cell *matCellDef="let row">
-                                    <!-- <a [routerLink]="['/placeorder', row.id]" class="fw-medium link-primary">#{{row.id}}</a>-->
                                     <a class="fw-medium link-primary">#{{row.id}}</a> </td>
                             </ng-container>
                             <ng-container matColumnDef="modeOfTransport">
@@ -136,13 +137,23 @@
                                 <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-muted table-light" scope="col">Delivery</th>
                                 <td mat-cell *matCellDef="let row">{{row.deliveryType}}</td>
                             </ng-container>
+                            <ng-container matColumnDef="quoteAmount">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-muted table-light align-right" scope="col"> Quote </th>
+                                <td mat-cell *matCellDef="let row">
+                                    <i class="bx bx-rupee"></i> <span class=" text-success">{{ ((row.quoteAmount)>0? row.quoteAmount : 0 )| number:'1.0-2'}}</span>
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="deadline">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-muted table-light" scope="col"> Deadline </th>
+                                <td mat-cell *matCellDef="let row"> {{row.deadline | date: 'dd-MMM-YYYY'}} </td>
+                            </ng-container>
 
                             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
                             <!-- Row shown when there is no matching  -->
                             <tr class="mat-row" *matNoDataRow>
-                                <td class="mat-cell" colspan="19">No data matching the filter"{{input.value}}"</td>
+                                <td class="mat-cell" colspan="11">No data matching the filter"{{input.value}}"</td>
                             </tr>
                         </table>
 

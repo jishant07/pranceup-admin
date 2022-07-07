@@ -12,6 +12,11 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule} from '@angular/material/paginator';
+import { MatSortModule } from "@angular/material/sort";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
     imports:[        
@@ -25,7 +30,11 @@ import { MatIconModule } from '@angular/material/icon';
     MatTabsModule,
     MatCheckboxModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule
     ],
     exports:[          
     MatAutocompleteModule,
@@ -38,7 +47,11 @@ import { MatIconModule } from '@angular/material/icon';
     MatTabsModule,
     MatCheckboxModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule
     ]
 })
 export class MaterialModule{}

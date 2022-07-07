@@ -23,14 +23,14 @@ import { CountryListComponent } from './country/country-list/country-list.compon
 import { FileUploadComponent } from './features/file-upload/file-upload.component';
 import { UserComponent } from './user/user.component';
 import { OrdersComponent } from './order/orders.component';
-import { QuotationComponent } from './quotation/quotation.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UpdateOrderComponent } from './order/update-order/update-order.component';
-import { OngoingOrdersComponent } from './order/ongoing-orders/ongoing-orders.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { PieceComponent } from './features/piece/piece.component';
 import { OrderDetailsComponent } from './order/order-details/order-details.component';
 import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.component';
+import { OngoingOrdersComponent } from './order/ongoing-orders/ongoing-orders.component';
+import { OnholdQuotationComponent } from './quotation/onhold-quotation/onhold-quotation.component';
 
 
 @NgModule({
@@ -44,7 +44,6 @@ import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.compon
     FileUploadComponent,
     UserComponent,
     OrdersComponent,
-    QuotationComponent,
     UserListComponent,
     UpdateOrderComponent,
     OngoingOrdersComponent,
@@ -52,6 +51,7 @@ import { InvoiceListComponent } from './invoice/invoice-list/invoice-list.compon
     PieceComponent,
     OrderDetailsComponent,
     InvoiceListComponent,
+    OnholdQuotationComponent
   ],
   imports: [
     BrowserModule,
