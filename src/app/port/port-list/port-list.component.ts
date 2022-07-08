@@ -12,7 +12,8 @@ import { MasterService } from 'src/app/_services/master.service';
 })
 export class PortListComponent implements OnInit {
   data: PortsModel[];
-  isLoading = true;  
+  isLoading = true;
+  hasData:boolean;
 
   displayedColumns: string[] = ['id','portName','state','country', 'isActive', 'action'];
 
@@ -39,10 +40,15 @@ export class PortListComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         this.isLoading = false;
+        if(this.dataSource.data.length>0){this.hasData = true;}
+        else{this.hasData = false;}
+        
       }
       else if(res.status == "failure"){
         this.dataSource = new MatTableDataSource(this.data);
         this.isLoading = false;
+        if(this.dataSource.data.length>0){this.hasData = true;}
+        else{this.hasData = false;}
       }
     });
   }

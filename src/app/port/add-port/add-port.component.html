@@ -42,6 +42,28 @@
                                                     <mat-label>Country</mat-label>
                                                     <input matInput type="text" formControlName="country">
                                                 </mat-form-field>
+                                            </div>
+                                            <div class="row" formGroupName="normal">
+                                                <mat-form-field class="col col-md-3">
+                                                    <mat-label>Normal Gen</mat-label>
+                                                    <input matInput type="text" formControlName="gen">
+                                                </mat-form-field>
+                                                <mat-form-field class="col col-md-3">
+                                                    <mat-label>Normal Haz</mat-label>
+                                                    <input matInput type="text" formControlName="haz">
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="row" formGroupName="express">
+                                                <mat-form-field class="col col-md-3">
+                                                    <mat-label>Express Gen</mat-label>
+                                                    <input matInput type="text" formControlName="gen">
+                                                </mat-form-field>
+                                                <mat-form-field class="col col-md-3">
+                                                    <mat-label>Express Haz</mat-label>
+                                                    <input matInput type="text" formControlName="haz">
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="row">
                                                 <mat-checkbox class="col col-md-3 inline-checkbox" color="primary" formControlName="isActive">Is Active</mat-checkbox>
                                             </div>
                                             <br/>
@@ -72,4 +94,4 @@
     <!-- end container-fluid -->
 </div>
 <!-- end page-content -->
-<script src="assets/js/pages/form-validation.init.js"></script>
+<!-- <script src="assets/js/pages/form-validation.init.js"></script> -->

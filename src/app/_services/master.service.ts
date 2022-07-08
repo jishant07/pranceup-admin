@@ -31,7 +31,7 @@ export class MasterService {
       //output format = {status: 'success', message: 'RtxPHScrrWfKbKPl4ho1'}
   }
   getPorts(){
-      return this.http.get(environment.devURL+"/app/listPorts",{headers: this.httpHeader});
+      return this.http.get(environment.devURL+"/app/getAllPorts",{headers: this.httpHeader});
       //{status: 'success', message: Array(9)}
   }
   //End: Port
@@ -42,7 +42,7 @@ export class MasterService {
     //output format = {status: 'success', message: 'RtxPHScrrWfKbKPl4ho1'}
   }
   getAirports(){
-      return this.http.get(environment.devURL+"/app/listAirports",{headers: this.httpHeader});
+      return this.http.get(environment.devURL+"/app/getAllAirports",{headers: this.httpHeader});
       //{status: 'success', message: Array(9)}
   }
   //End: Airport

@@ -13,6 +13,7 @@ import { MasterService } from 'src/app/_services/master.service';
 export class AirportListComponent implements OnInit {
   data: AirportModel[];
   isLoading = true;  
+  hasData:boolean;
 
   displayedColumns: string[] = ['id' ,'airportTag','airportName','state','country', 'isActive', 'action'];
 
@@ -39,10 +40,14 @@ export class AirportListComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         this.isLoading = false;
+        if(this.dataSource.data.length>0){this.hasData = true;}
+        else{this.hasData = false;}
       }
       else if(res.status == "failure"){
         this.dataSource = new MatTableDataSource(this.data);
         this.isLoading = false;
+        if(this.dataSource.data.length>0){this.hasData = true;}
+        else{this.hasData = false;}
       }
     });
   }

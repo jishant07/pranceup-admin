@@ -30,8 +30,7 @@
                     </div>
                 </div>
 
-                <div class="card-body" [hidden]="isLoading" *ngIf="dataSource != undefined && !dataSource.data.length">
-
+                <div class="card-body" [hidden]="isLoading || hasData">
                     <div class="d-flex">
                         <div class="row card-title mb-0 flex-grow-1">
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
@@ -53,7 +52,7 @@
                     </div>
                 </div>
 
-                <div class="card-body" [hidden]="isLoading && (dataSource != undefined && dataSource.data.length)">
+                <div class="card-body" [hidden]="!hasData">
                     <div class="d-flex">
                         <div class="row card-title mb-0 flex-grow-1">
                             <mat-form-field class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -169,7 +168,7 @@
 </div>
 <!--end modal -->
 
-<script src="assets/libs/feather-icons/feather.min.js "></script>
+<!-- <script src="assets/libs/feather-icons/feather.min.js "></script> -->
 
 <!--ecommerce-customer init js -->
-<script src="assets/js/pages/ecommerce-customer-list.init.js "></script>
+<!-- <script src="assets/js/pages/ecommerce-customer-list.init.js "></script> -->

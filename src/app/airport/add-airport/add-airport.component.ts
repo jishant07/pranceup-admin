@@ -24,6 +24,14 @@ export class AddAirportComponent implements OnInit {
     airportName: new FormControl(null,[Validators.required]),
     state: new FormControl(null,[Validators.required]),
     country: new FormControl(null,[Validators.required]),
+    express: new FormGroup({
+      gen: new FormControl(null,[Validators.required]),
+      haz: new FormControl(null,[Validators.required])
+    }),
+    normal: new FormGroup({
+      gen: new FormControl(null,[Validators.required]),
+      haz: new FormControl(null,[Validators.required])
+    }),
     isActive: new FormControl(null,[Validators.required])
   });
 
@@ -31,20 +39,7 @@ export class AddAirportComponent implements OnInit {
     if(!this.formGroup.valid){
       return;
     }
-
-    let formData: any = {};
-    Object.keys(this.formGroup.value).forEach(key => {
-      if (this.formGroup.value[key] != "" && this.formGroup.value[key] != null) {
-        if (key == 'isActive') {   
-          //do not add isActive key        
-        }
-        else {
-          formData[key] = this.formGroup.value[key];
-        }
-      }
-    });
-
-    this.masterService.addAirport(formData).subscribe((res: any) => {
+    this.masterService.addAirport(this.formGroup.value).subscribe((res: any) => {
       if(res != null && res.status == 'success'){
        this.globalService.openSnackBar("Airport added successfully");
        this.router.navigate(["/airport-list"])
