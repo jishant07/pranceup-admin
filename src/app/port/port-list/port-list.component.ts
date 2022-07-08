@@ -15,7 +15,7 @@ export class PortListComponent implements OnInit {
   isLoading = true;
   hasData:boolean;
 
-  displayedColumns: string[] = ['id','portName','state','country', 'isActive', 'action'];
+  displayedColumns: string[] = ['id','portName','state','country', 'isActive'];
 
   dataSource: MatTableDataSource<PortsModel>;
 

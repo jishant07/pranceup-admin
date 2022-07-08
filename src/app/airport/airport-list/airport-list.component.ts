@@ -15,7 +15,7 @@ export class AirportListComponent implements OnInit {
   isLoading = true;  
   hasData:boolean;
 
-  displayedColumns: string[] = ['id' ,'airportTag','airportName','state','country', 'isActive', 'action'];
+  displayedColumns: string[] = ['id' ,'airportTag','airportName','state','country', 'isActive'];
 
   dataSource: MatTableDataSource<AirportModel>;
 
