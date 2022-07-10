@@ -18,8 +18,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardContentComponent } from './dashboard/dashboard-content/dashboard-content.component';
-import { CountryComponent } from './country/country.component';
-import { CountryListComponent } from './country/country-list/country-list.component';
 import { FileUploadComponent } from './features/file-upload/file-upload.component';
 import { UserComponent } from './user/user.component';
 import { OrdersComponent } from './order/orders.component';
@@ -43,8 +41,6 @@ import { AirportListComponent } from './airport/airport-list/airport-list.compon
     LoginComponent,
     DashboardComponent,
     DashboardContentComponent,
-    CountryComponent,
-    CountryListComponent,
     FileUploadComponent,
     UserComponent,
     OrdersComponent,

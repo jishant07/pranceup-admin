@@ -35,6 +35,14 @@ export class GlobalService {
   ]
   public deliveryTypes:any = ["Express", "Normal"]
 
+  public msgTechnicalIssue = 'There is some technical problem, try again later';
+  public msgRecordAdded = 'Record has been added successfully';
+  public msgRecordEdited = 'Record has been updated successfully';
+  public lblAdd = 'Add';
+  public lblEdit = 'Edit'
+  public lblCancel = 'Cancel';
+  
+
   handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.

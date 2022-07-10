@@ -4,8 +4,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './_services/auth.guard';
 import { DashboardContentComponent } from './dashboard/dashboard-content/dashboard-content.component';
-import { CountryComponent } from './country/country.component';
-import { CountryListComponent } from './country/country-list/country-list.component';
 import { OrdersComponent } from './order/orders.component';
 import { UserComponent } from './user/user.component';
 import { UserListComponent } from './user/user-list/user-list.component';
@@ -26,13 +24,6 @@ const routes: Routes = [
   { path:"login", component:LoginComponent },
   { path:"dashboard",component:DashboardComponent,canActivate:[AuthGuard] , children:[
     {path:'', component: DashboardContentComponent}]},
-
-  { path:"country-list",component:DashboardComponent,canActivate:[AuthGuard] , children:[
-    {path:'', component: CountryListComponent}]},
-  { path:"country",component:DashboardComponent,canActivate:[AuthGuard] , children:[
-     {path:'', component: CountryComponent}]},
-  { path:"country/:id",component:DashboardComponent,canActivate:[AuthGuard] , children:[
-    {path:'', component: CountryComponent}]},
   
   { path:"orders",component:DashboardComponent,canActivate:[AuthGuard] , children:[
     {path:'', component: OrdersComponent}]},
@@ -61,12 +52,18 @@ const routes: Routes = [
   ]},
   { path: "port", component: DashboardComponent, canActivate : [AuthGuard], children: [
     {path: "", component: AddPortComponent}
+  ]},  
+  { path: "port/:id", component: DashboardComponent, canActivate : [AuthGuard], children: [
+    {path: "", component: AddPortComponent}
   ]},
 
   { path: "airport-list", component: DashboardComponent, canActivate : [AuthGuard], children: [
     {path: "", component: AirportListComponent}
   ]},
   { path: "airport", component: DashboardComponent, canActivate : [AuthGuard], children: [
+    {path: "", component: AddAirportComponent}
+  ]},
+  { path: "airport/:id", component: DashboardComponent, canActivate : [AuthGuard], children: [
     {path: "", component: AddAirportComponent}
   ]}
 ];

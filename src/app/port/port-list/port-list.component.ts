@@ -47,8 +47,7 @@ export class PortListComponent implements OnInit {
       else if(res.status == "failure"){
         this.dataSource = new MatTableDataSource(this.data);
         this.isLoading = false;
-        if(this.dataSource.data.length>0){this.hasData = true;}
-        else{this.hasData = false;}
+        this.hasData = false;
       }
     });
   }

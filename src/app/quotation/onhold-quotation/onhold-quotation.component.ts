@@ -15,6 +15,7 @@ export class OnholdQuotationComponent implements OnInit, AfterViewInit {
   quotesData: QuotationModel[];
   isLoading = true;  
   mode:string = 'Air';
+  hasData:boolean;
 
   displayedColumns: string[] = ['id','modeOfTransport','typeOfActivity','destinationPort','destinationAirport'
   ,'portOfOrigin','airportOfOrigin','incoTerms','deliveryType'];
@@ -42,7 +43,7 @@ export class OnholdQuotationComponent implements OnInit, AfterViewInit {
   }
 
   getData(){    
-    const quoteState = 'EXPIRED';
+    const quoteState = 'ACTIVE';
     this.quoteService.getQuotes(quoteState)
     .subscribe((res: any) =>{
       ////Response format - {status: 'success', message: Array(9)}
@@ -52,13 +53,18 @@ export class OnholdQuotationComponent implements OnInit, AfterViewInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         this.isLoading = false;
+        console.log(this.quotesData);
+        if(this.dataSource.data.length>0){this.hasData = true;}
+        else{this.hasData = false;}
         this.changeMode(this.mode);
       }
       else if(res.status == "failure"){
         this.dataSource = new MatTableDataSource(this.quotesData);
         this.isLoading = false;
+        this.hasData = false;
       }
     });
+    console.log(this.hasData)
   }
   
   ngAfterViewInit() {
@@ -69,6 +75,8 @@ export class OnholdQuotationComponent implements OnInit, AfterViewInit {
   }
 
   applyFilter(event: Event) {
+    this.mode = 'all';
+    this.displayTableBasedOnMode();
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 

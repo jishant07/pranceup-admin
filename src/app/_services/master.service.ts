@@ -11,6 +11,7 @@ export class MasterService {
 
   token?:string; 
   httpHeader:any;
+  httpHeaderUrlencoded:any;
   isLoading:boolean = false;
 
   constructor(
@@ -23,6 +24,10 @@ export class MasterService {
   setHeader(){
     this.getToken();
     this.httpHeader = {'token': this.token as string};
+    this.httpHeaderUrlencoded = {
+      'token': this.token as string,
+      'Content-Type': 'application/x-www-form-urlencoded'      
+    };
   }
 
   //Begin: Port
@@ -34,6 +39,14 @@ export class MasterService {
       return this.http.get(environment.devURL+"/app/getAllPorts",{headers: this.httpHeader});
       //{status: 'success', message: Array(9)}
   }
+  getPort(portId:string){   
+    const body = {portId: ''+portId+''}
+    return this.http.post(environment.devURL+"/app/getPortById", body, {headers: this.httpHeaderUrlencoded});
+  }
+  editPort(data:any){
+    return this.http.post(environment.devURL+"/app/editPort", data, {headers: this.httpHeader});
+    //output format = {status: 'success', message: 'RtxPHScrrWfKbKPl4ho1'}
+  }
   //End: Port
 
   //Begin: Airport
@@ -44,6 +57,14 @@ export class MasterService {
   getAirports(){
       return this.http.get(environment.devURL+"/app/getAllAirports",{headers: this.httpHeader});
       //{status: 'success', message: Array(9)}
+  }
+  getAirport(airportId:string){    
+    const body = {airportId: ''+airportId+''} 
+    return this.http.post(environment.devURL+"/app/getAirportById", body, {headers: this.httpHeaderUrlencoded});
+  }
+  editAirport(data:any){
+    return this.http.post(environment.devURL+"/app/editAirport", data, {headers: this.httpHeader});
+    //output format = {status: 'success', message: 'RtxPHScrrWfKbKPl4ho1'}
   }
   //End: Airport
 }
